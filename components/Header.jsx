@@ -1,36 +1,29 @@
 'use client'
 import { Link as ScrollLink } from "react-scroll"
-
-const Links = [
-    {
-    name:"home"
-},
-    {
-    name:"about"
-},
-    {
-    name:"journey"
-},
-    {
-    name:"work"
-    },
-    {
-    name:"work"
-    }
-]
-
+import Logo from "./Logo"
+import Nav from "./Nav"
+import Socials from "./Socials"
 
 const Header = () => {
   return (
-      <header className="w-full absolute py-8 xl:py-[48px] z-30">
-          <div className="container mx-auto">
-              <div>Logo</div>
+    <header className='w-full absolute py-8 xl:py-[48px] z-30'>
+      <div className='container mx-auto'>
+        <div className='flex flex-col lg:flex-row items-center gap-4 lg:justify-between'>
+          <Logo light={false} />
+          <div className="flex items-center gap-12 ">
+            <Nav
+              containerStyles={'hidden xl:flex'}
+              listStyles={'flex gap-6'}
+              linkStyles={
+                'text-primary font-primary text-lg tracking-[1.4px] transition-all duration-300 cursor-pointer'
+              }
+            />
+           <Socials containerStyles={"flex items-center gap-2"} iconStyles={"text-base w-[32px] h-[32px] bg-primary text-white flex items-center justify-center rounded-full"}/>
           </div>
-          <nav>
-              
-          </nav>
+        </div>
+      </div>
     </header>
-  )
+  );
 }
 
 export default Header

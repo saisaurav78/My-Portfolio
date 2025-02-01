@@ -4,9 +4,8 @@ import React from 'react'
 const Home = () => {
   return (
     <>
-      <Hero/>
-    
-    
+      <Hero />
+      <div className='h-[3000px] '></div>
     
     
     </>
