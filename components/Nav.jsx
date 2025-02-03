@@ -3,19 +3,19 @@ import {Link as ScrollLink} from "react-scroll"
 
 const Links = [
   {
-    name: 'home',
+    name: 'Home',
   },
   {
-    name: 'about',
+    name: 'About',
   },
   {
-    name: 'journey',
+    name: 'Journey',
   },
   {
-    name: 'work',
+    name: 'Work',
   },
   {
-    name: 'work',
+    name: 'Contact',
   },
 ];
 
