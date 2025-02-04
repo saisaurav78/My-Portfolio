@@ -5,11 +5,12 @@ import { TypeAnimation } from 'react-type-animation';
 import { Link as ScrollLink } from 'react-scroll';
 import RotatingShape from './RotatingShape';
 import Header from './Header';
+import Stats from './Stats/Stats';
 
 const Hero = () => {
   return (
-      <section className='h-[800px] relative bg-accent/10 xl:bg-white'>
-          <Header/>
+    <section id='Home' className='h-[800px] relative bg-accent/10 xl:bg-white'>
+      <Header />
       <div className='container mx-auto h-full'>
         <div
           className='relative z-20 h-full w-full xl:max-w-[768px] flex flex-col
@@ -36,6 +37,7 @@ const Hero = () => {
           <ScrollLink to='contact' smooth>
             <button className='btn btn-accent mb-8'>Contact Me</button>
           </ScrollLink>
+          <Stats />
         </div>
         <div className='hidden xl:flex w-[55vw] h-[800px] absolute top-0 right-0 bg-accent'>
           <div className='absolute w-[558px] h-[642px] bottom-8 z-40 left-[6.5vw]'>
@@ -48,10 +50,14 @@ const Hero = () => {
               priority
             />
           </div>
-          <div className='hidden xl:flex absolute top-48 left-[4vw]'>
+          <div
+            className='hidden xl:flex absolute top-48 left-[4vw]'
+            data-scroll
+            data-scroll-speed='0.05'
+          >
             <Image src={'/assets/hero/arrow.svg'} width={160} height={160} alt='arrow' />
           </div>
-          <div className='absolute top-[600px] left-[3vw]'>
+          <div className='absolute top-[600px] left-[3vw]' data-scroll data-scroll-speed='0.2'>
             <RotatingShape
               direction={'left'}
               duration={6}
@@ -65,7 +71,7 @@ const Hero = () => {
               }
             />
           </div>
-          <div className='absolute top-[240px] xl:left-[33vw]'>
+          <div className='absolute top-[240px] xl:left-[33vw]' data-scroll data-scroll-speed='0.1'>
             <RotatingShape
               direction={'right'}
               duration={5}
@@ -79,7 +85,7 @@ const Hero = () => {
               }
             />
           </div>
-          <div className='absolute top-[480px] xl:left-[40vw]'>
+          <div className='absolute top-[480px] xl:left-[40vw]' data-scroll data-scroll-speed='0.08'>
             <RotatingShape
               direction={'left'}
               duration={4}
