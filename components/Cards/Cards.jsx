@@ -1,3 +1,4 @@
+'use client'
 import Card from "./Card"
 
 import {Tabs,TabsContent,TabsList,TabsTrigger } from '@/components/ui/tabs'
@@ -67,16 +68,39 @@ const Cards = () => {
   return (
     <Tabs defaultValue="experience" className="w-full flex flex-col items-center">
       <TabsList className='max-w-max mb-[30px]'>
-        <TabsTrigger>Experience</TabsTrigger>
-        <TabsTrigger>Education</TabsTrigger>
-        <TabsTrigger>My Skills</TabsTrigger>
+        <TabsTrigger value='experience'>Experience</TabsTrigger>
+        <TabsTrigger value='education'>Education</TabsTrigger>
+        <TabsTrigger value='skills'>My Skills</TabsTrigger>
       </TabsList>
       <TabsContent value='experience' className='w-full'>
-        <div>
+        <AnimatePresence>
+
+        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1, y:0}} exit={{opacity:0,y:20}} transition={{duration:0.3}}>
           {journey.filter((item) => item.type === 'experience').map((card, index) => {
             return <Card key={index} {...card} />
           })}
-        </div>
+        </motion.div>
+        </AnimatePresence>
+      </TabsContent>
+      <TabsContent value='education' className='w-full'>
+        <AnimatePresence>
+
+        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1, y:0}} exit={{opacity:0,y:20}} transition={{duration:0.3}}>
+          {journey.filter((item) => item.type === 'education').map((card, index) => {
+            return <Card key={index} {...card} />
+          })}
+        </motion.div>
+        </AnimatePresence>
+      </TabsContent>
+      <TabsContent value='skills' className='w-full'>
+        <AnimatePresence>
+
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} transition={{ duration: 0.3 }}>
+          {journey.filter((item) => item.type === 'skill').map((card, index) => {
+            return <Card key={index} {...card} />
+          })}
+        </motion.div>
+        </AnimatePresence>
       </TabsContent>
     </Tabs>
   )
