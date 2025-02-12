@@ -49,7 +49,7 @@ const Work = () => {
         <Tabs defaultValue='all' className='w-full flex flex-col'>
           <div className='flex flex-col xl:flex-row items-center xl:items-start xl:justify-between mb-[30px]' >
             <AnimatedText text={'My Latest Work'} textStyles={'h2 mb-[30px] xl:mb-0'} />
-            <TabsList className='max-w-max h-full mb-[30px] flex flex-col md:flex-row gap-4 md:gap-0'>{tabData.map((item, index) => {
+            <TabsList className='text-center max-w-max h-full mb-[30px] flex flex-col md:flex-row gap-4 md:gap-0'>{tabData.map((item, index) => {
               return <TabsTrigger onClick={()=>setTabValue(item.category)} value={ item.category} key={index} className='capitalize w-max min-w-[120px]' >{ item.category}</TabsTrigger>
             }) }</TabsList>
           </div>
