@@ -13,7 +13,13 @@ const data = [
   },
   {
     href: '',
-    category: 'Design and Frontend',
+    category: 'design',
+    img: '/assets/work/thumb-1.png',
+    title: 'Website Design for SunTechnologies',
+  },
+  {
+    href: '',
+    category: 'Frontend',
     img: '/assets/work/thumb-2.png',
     title: 'SunTechnologies Website',
   },

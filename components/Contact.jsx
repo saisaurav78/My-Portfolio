@@ -47,12 +47,12 @@ const Contact = () => {
   };
 
   return (
-    <section className='pt-8 xl:pt-12 pb-32' id='Contact'>
+    <section className='pt-8 xl:pt-20 pb-32' id='Contact'>
       <div className='container mx-auto'>
         <div>
           <div>
             <AnimatedText
-              textStyles={'h2 mb-12 text-center xl:text-left'}
+              textStyles={'h2 mb-12 text-center xl:text-center'}
               text={"Let's Work Together"}
             />
             <form action='' className='flex flex-col gap-6 w-full max-w-[480px]'>

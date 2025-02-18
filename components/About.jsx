@@ -52,7 +52,10 @@ const About = () => {
           flex-col gap-6'
           >
             <div>
-              <h2 className='text-4xl font-semibold mb-2'>My name is Sai Sowrav</h2>
+              <AnimatedText
+                text={"Hi, I'm Sai Sowrav"}
+                textStyles={'h2 text-4xl mb-[30px]'}
+              />
               <p className='text-lg'>Full Stack Developer and Designer</p>
             </div>
             <p className='max-w-[680px] mx-auto xl:mx-0 mb-2 '>

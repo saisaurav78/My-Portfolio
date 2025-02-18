@@ -63,7 +63,7 @@ const FixedMenu = () => {
                         <FiMapPin />
                       </div>
                       <p className='font-semibold text-primary text-lg'>Location</p>
-                      <p>Vizianagaram, INDIA</p>
+                      <p>Visakhapatnam, INDIA</p>
                     </div>
                     <div className='flex flex-col'>
                       <div className='text-[28px] text-accent mb-2'>
