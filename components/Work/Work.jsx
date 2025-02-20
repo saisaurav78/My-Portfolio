@@ -6,34 +6,28 @@ import WorkItem from './WorkItem';
 
 const data = [
   {
-    href: '',
-    category: 'design',
-    img: '/assets/work/thumb-1.png',
+    href: 'https://www.figma.com/community/file/1466468695704871952/autowala-an-app-for-booking-auto-rides',
+    category: 'Design',
+    img: '/assets/work/AutoWala.png',
     title: 'AutoWala - An Auto-ride Booking app',
   },
   {
-    href: '',
-    category: 'design',
-    img: '/assets/work/thumb-1.png',
-    title: 'Website Design for SunTechnologies',
-  },
-  {
-    href: '',
+    href: 'https://suntechnologiesvzm.netlify.app',
     category: 'Frontend',
-    img: '/assets/work/thumb-2.png',
-    title: 'SunTechnologies Website',
+    img: '/assets/work/SunTechnologies.png',
+    title: 'Website Design + Dev for SunTechnologies',
   },
   {
-    href: '',
+    href: 'https://a2zkart.vercel.app',
     category: 'Full Stack',
-    img: '/assets/work/thumb-3.png',
-    title: 'A2ZKart- A Full Stack Ecommerce site',
+    img: '/assets/work/A2ZKart.png',
+    title: 'A2ZKart - A Full Stack Ecommerce site',
   },
   {
-    href: '',
+    href: 'https://posts-com.onrender.com',
     category: 'Full Stack',
-    img: '/assets/work/thumb-4.png',
-    title: 'PostsBlog- A Full Stack Blog site',
+    img: '/assets/work/PostsNow.png',
+    title: 'PostsNow - A Full Stack Blog site',
   },
 ];
 

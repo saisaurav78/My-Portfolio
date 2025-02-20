@@ -7,7 +7,7 @@ import {Badge} from '../ui/badge'
 
 const WorkItem = ({href,category,img,title}) => {
   return (
-      <Link href={'/'} className="group">
+      <Link target="__blank" href={href} className="group">
       <div className="w-full h-[300px] p-8 rounded-[30px] flex items-center justify-center mb-6 relative overflow-hidden bg-[#f4f4f4]">
         <Badge className={'bg-primary text-base z-40 absolute top-6 left-6 capitalize'}>{category}</Badge>
         <Image alt="workImg" src={img} fill priority quality={100} className="object-cover group-hover:scale-105 transition-all duration-500"/>

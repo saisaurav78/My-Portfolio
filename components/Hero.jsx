@@ -5,7 +5,6 @@ import { TypeAnimation } from 'react-type-animation';
 import { Link as ScrollLink } from 'react-scroll';
 import RotatingShape from './RotatingShape';
 import Header from './Header';
-import Stats from './Stats/Stats';
 import Link from 'next/link';
 
 const Hero = () => {
@@ -35,7 +34,7 @@ const Hero = () => {
           <p className='lead max-w-[476px] mb-7'>
             Delivering powerful, custom websites that blend aesthetics with performance.
           </p>
-          <div className='space-x-16'>
+          <div className='space-x-8'>
             <ScrollLink to='Contact' smooth>
               <button className='btn btn-accent mb-8 text-black'>Contact Me</button>
             </ScrollLink>

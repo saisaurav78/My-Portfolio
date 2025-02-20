@@ -1,30 +1,24 @@
 import Link from "next/link"
-import {FaFacebookF, FaTwitter, FaLinkedin} from "react-icons/fa"
+import {FaFacebookF, FaTwitter, FaLinkedin, FaGithub} from "react-icons/fa"
 import { RiInstagramFill } from 'react-icons/ri'
 
 const socials = [
+  
     {
-        icon: <RiInstagramFill />,
-        path:""
+        icon: <FaGithub />,
+        path:"https://github.com/saisaurav78"
     },
-    {
-        icon: <FaFacebookF />,
-        path:""
-    },
-    {
-        icon: <FaTwitter />,
-        path:""
-    },
+  
     {
         icon: <FaLinkedin />,
-        path:""
+        path:"https://linkedin.com/in/sai-sowrav-andukuri"
     },
 ]
 const Socials = ({containerStyles, iconStyles}) => {
   return (
       <div className={containerStyles}>{
           socials.map((item,index) => {
-              return <Link href={item.path} key={index} className={iconStyles }>
+              return <Link target="__blank" href={item.path} key={index} className={iconStyles }>
                   <span>{ item.icon}</span>
               </Link>
           })

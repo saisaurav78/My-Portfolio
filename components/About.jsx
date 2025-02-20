@@ -52,15 +52,16 @@ const About = () => {
           flex-col gap-6'
           >
             <div>
-              <AnimatedText
-                text={"Hi, I'm Sai Sowrav"}
-                textStyles={'h2 text-4xl mb-[30px]'}
-              />
+              <AnimatedText text={"Hi, I'm Sai Sowrav"} textStyles={'h2 text-4xl mb-[30px]'} />
               <p className='text-lg'>Full Stack Developer and Designer</p>
             </div>
-            <p className='max-w-[680px] mx-auto xl:mx-0 mb-2 '>
-              I create visually stunning and functional websites using modern technologies and
-              design principles. Explore my work to see more about my skills.
+            <p className='max-w-[650px] mx-auto xl:mx-0 mb-2 xl:text-lg'>
+              I graduated with a Bachelor’s degree in Chemical Engineering in June 2024. I have
+              diverse interests in web development, app development, and other related fields, and I
+              am continuously expanding my skills and knowledge in these areas. I specialize in
+              creating visually stunning and functional websites using modern technologies and
+              design principles. Explore my work to learn more about my skills and how I can help
+              bring your ideas to life.
             </p>
           </div>
         </div>
