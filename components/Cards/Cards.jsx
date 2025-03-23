@@ -23,13 +23,6 @@ const journey = [
   },
   {
     type: 'education',
-    institution: 'Coursera',
-    logoUrl: '/assets/journey/education/coursera.svg',
-    qualification: 'Meta Frontend Developer Certification',
-    duration: 'Nov 2024 - Present',
-  },
-  {
-    type: 'education',
     institution: 'Andhra University, Visakhapatnam, India',
     logoUrl: '/assets/journey/education/AU.png',
     qualification: 'Master of Computer Applications',
@@ -37,10 +30,17 @@ const journey = [
   },
   {
     type: 'education',
+    institution: 'Coursera',
+    logoUrl: '/assets/journey/education/coursera.svg',
+    qualification: 'Meta Frontend Developer Certification',
+    duration: 'Nov 2024 - March 2025',
+  },
+  {
+    type: 'education',
     institution: 'MVGR College of Engineering, Vizianagaram, India',
     logoUrl: '/assets/journey/education/MVGR.png',
     qualification: 'Bachelor of Technology in Chemical Engineeering',
-    duration: 'June 2021 - June 2024',
+    duration: 'Dec 2021 - June 2024',
   },
   {
     type: 'skills',

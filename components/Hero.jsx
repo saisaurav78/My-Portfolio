@@ -55,7 +55,7 @@ const Hero = () => {
               alt='hero-image'
               className='object-contain'
               src={'/assets/hero/dev.png'}
-              fill
+              fill={"full"}
               quality={100}
               priority
             />
