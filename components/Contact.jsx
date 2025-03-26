@@ -8,7 +8,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 
 const Contact = () => {
- const [state, handleSubmit] = useForm('mldjbljn');
+ const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID);
   const [formdata, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -107,7 +107,7 @@ const Contact = () => {
               </div>
               <div>
                 <label htmlFor='phone' className='block mb-2 text-sm font-medium text-primary'>
-                  Phone Number <span className='text-accent'>*</span>
+                  Phone Number 
                 </label>
                 <input
                   type='text'
