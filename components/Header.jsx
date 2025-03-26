@@ -1,5 +1,4 @@
 'use client'
-import { Link as ScrollLink } from "react-scroll"
 import Logo from "./Logo"
 import Nav from "./Nav"
 import Socials from "./Socials"
@@ -15,7 +14,7 @@ const Header = () => {
               containerStyles={'hidden xl:flex'}
               listStyles={'flex gap-6'}
               linkStyles={
-                'text-primary font-primary text-lg tracking-[1.4px] transition-all duration-300 cursor-pointer'
+                'text-primary font-primary text-lg tracking-[1.4px] transition-all duration-300 cursor-pointer hover:underline transition-all duration-150'
               }
             />
            <Socials containerStyles={"flex items-center gap-2"} iconStyles={"text-base w-[32px] h-[32px] bg-primary text-white flex items-center justify-center rounded-full"}/>
