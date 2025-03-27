@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
@@ -39,7 +38,7 @@ const Hero = () => {
               <button className='btn btn-accent mb-8 text-black'>Contact Me</button>
             </ScrollLink>
             <Link
-              target='__blank'
+              target='_blank'
               href={
                 'https://drive.google.com/file/d/1ffTrpsStRRMFyMJM_XiK9ZB9x5EzJnch/view?usp=sharing'
               }
@@ -55,7 +54,8 @@ const Hero = () => {
               alt='hero-image'
               className='object-contain'
               src={'/assets/hero/dev.png'}
-              fill={"full"}
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               quality={100}
               priority
             />
@@ -65,7 +65,7 @@ const Hero = () => {
             data-scroll
             data-scroll-speed='0.05'
           >
-            <Image src={'/assets/hero/arrow.svg'} width={160} height={160} alt='arrow' />
+            <Image src={'/assets/hero/arrow.svg'} width={160} height={160} className='w-auto h-auto' alt='arrow' />
           </div>
           <div className='absolute top-[600px] left-[3vw]' data-scroll data-scroll-speed='0.2'>
             <RotatingShape
@@ -76,6 +76,7 @@ const Hero = () => {
                   src={'/assets/hero/shape-1.svg'}
                   width={38}
                   height={38}
+                  className='w-auto h-auto'
                   alt='rotating-shape'
                 />
               }
@@ -90,6 +91,7 @@ const Hero = () => {
                   src={'/assets/hero/shape-2.svg'}
                   width={34}
                   height={34}
+                  className='w-auto h-auto'
                   alt='rotating-shape'
                 />
               }
@@ -104,6 +106,7 @@ const Hero = () => {
                   src={'/assets/hero/shape-3.svg'}
                   width={34}
                   height={34}
+                  className='w-auto h-auto'
                   alt='rotating-shape'
                 />
               }

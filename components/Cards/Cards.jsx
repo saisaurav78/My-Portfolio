@@ -1,10 +1,7 @@
-'use client'
-import Card from "./Card"
-
-import {Tabs,TabsContent,TabsList,TabsTrigger } from '@/components/ui/tabs'
-import { motion, AnimatePresence } from 'framer-motion'
-
-import { FaHtml5,FaJs,FaReact,FaFigma,FaNodeJs,FaPython, FaCss3 } from "react-icons/fa"
+import Card from './Card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { motion } from 'framer-motion';
+import { FaHtml5, FaJs, FaReact, FaFigma, FaNodeJs, FaPython, FaCss3 } from 'react-icons/fa';
 
 const journey = [
   {
@@ -39,7 +36,7 @@ const journey = [
     type: 'education',
     institution: 'MVGR College of Engineering, Vizianagaram, India',
     logoUrl: '/assets/journey/education/MVGR.png',
-    qualification: 'Bachelor of Technology in Chemical Engineeering',
+    qualification: 'Bachelor of Technology in Chemical Engineering',
     duration: 'Dec 2021 - June 2024',
   },
   {
@@ -78,46 +75,34 @@ const journey = [
     icon: <FaFigma />,
   },
 ];
+
 const Cards = () => {
   return (
-    <Tabs defaultValue="experience" className="w-full flex flex-col items-center">
+    <Tabs defaultValue='experience' className='w-full flex flex-col items-center'>
       <TabsList className='max-w-max mb-[30px]'>
         <TabsTrigger value='experience'>Experience</TabsTrigger>
         <TabsTrigger value='education'>Education</TabsTrigger>
         <TabsTrigger value='skills'>Skills</TabsTrigger>
       </TabsList>
-      <TabsContent value='experience' className='w-full'>
-        <AnimatePresence>
 
-        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1, y:0}} exit={{opacity:0,y:20}} transition={{duration:0.3}}>
-          {journey.filter((item) => item.type === 'experience').map((card, index) => {
-            return <Card key={index} {...card} />
-          })}
-        </motion.div>
-        </AnimatePresence>
-      </TabsContent>
-      <TabsContent value='education' className='w-full'>
-        <AnimatePresence>
-
-        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1, y:0}} exit={{opacity:0,y:20}} transition={{duration:0.3}}>
-          {journey.filter((item) => item.type === 'education').map((card, index) => {
-            return <Card key={index} {...card} />
-          })}
-        </motion.div>
-        </AnimatePresence>
-      </TabsContent>
-      <TabsContent value='skills' className='w-full'>
-        <AnimatePresence>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} transition={{ duration: 0.3 }}>
-          {journey.filter((item) => item.type === 'skills').map((card, index) => {
-            return <Card key={index} {...card} />
-          })}
-        </motion.div>
-        </AnimatePresence>
-      </TabsContent>
+      {['experience', 'education', 'skills'].map((category) => (
+        <TabsContent key={category} value={category} className='w-full'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {journey
+              .filter((item) => item.type === category)
+              .map((card) => (
+                <Card key={card.company || card.institution || card.name} {...card} />
+              ))}
+          </motion.div>
+        </TabsContent>
+      ))}
     </Tabs>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;

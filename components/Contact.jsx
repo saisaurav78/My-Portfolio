@@ -1,58 +1,52 @@
-import { useState, useEffect } from "react";
-import {useForm,ValidationError } from "@formspree/react"
+import { useState, useEffect } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
-import AnimatedText from "./AnimatedText";
-import Image from "next/image";
-import { FaCheckCircle } from "react-icons/fa";
-
-
+import AnimatedText from './AnimatedText';
+import Image from 'next/image';
+import { FaCheckCircle } from 'react-icons/fa';
 
 const Contact = () => {
- const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID);
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID);
   const [formdata, setFormData] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    phone: "",
-    message:""
-  })
-  const [showIcon, setShowIcon] = useState(false)
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  const [showIcon, setShowIcon] = useState(false);
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData({ ...formdata, [name]: value })
-    
-  }
+    const { name, value } = e.target;
+    setFormData({ ...formdata, [name]: value });
+  };
   useEffect(() => {
     if (state.succeeded) {
-      setShowIcon(true)
+      setShowIcon(true);
       setFormData({
-        firstname: "",
-        lastname: "",
-        email: "",
-        phone: "",
-        message:""
-      })
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
       const timer = setTimeout(() => {
-        setShowIcon(false)
-      }, 3000)
-      
-      return ()=>clearTimeout(timer)
+        setShowIcon(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
     }
-  }, [state.succeeded])
+  }, [state.succeeded]);
 
   const handleFormSubmit = (e) => {
-    e.preventDefault()
-    handleSubmit(formdata)
-  }
+    e.preventDefault();
+    handleSubmit(formdata);
+  };
   return (
     <section className='pt-8 xl:pt-16 pb-32' id='Contact'>
       <div className='container mx-auto'>
-        <div className="flex flex-col items-center xl:flex-row gap-16">
-          <div className="flex-1 mx-auto xl:mx-0 flex flex-col">
-            <AnimatedText
-              text={'Lets Work Together'}
-              textStyles={'h2 mb-12 text-center xl:text-left'}
-            />
+        <div className='flex flex-col items-center xl:flex-row gap-16'>
+          <div className='flex-1 mx-auto xl:mx-0 flex flex-col'>
+            <AnimatedText text={"Let's Talk 🚀"} textStyles={'h2 mb-12 text-center xl:text-left'} />
             <form onSubmit={handleFormSubmit} className='flex flex-col gap-6 w-full max-w-[480px]'>
               <div className='flex gap-8'>
                 <div className='flex-1'>
@@ -107,7 +101,7 @@ const Contact = () => {
               </div>
               <div>
                 <label htmlFor='phone' className='block mb-2 text-sm font-medium text-primary'>
-                  Phone Number 
+                  Phone Number
                 </label>
                 <input
                   type='text'
@@ -129,28 +123,52 @@ const Contact = () => {
                   value={formdata.message}
                   className='textarea'
                   placeholder="What's on your mind?"
-                rows="5"
+                  rows='5'
                   onChange={handleChange}
                   required
                 />
                 <ValidationError prefix='Message' field='message' errors={state.errors} />
               </div>
-              <button type="submit" disabled={state.submitting} className="btn btn-accent flex items-center justify-center gap-2">
-                {state.submitting ? (<span>Sending...</span>) : (<>
-                  <FaCheckCircle className={`absolute text-white text-lg transition-opacity duration-500 ease-in-out ${showIcon? 'opacity-100' : 'opacity-0'}`} />
-                  <span className={`transition-opacity duration-500 ease-in-out ${showIcon?'opacity-0':'opacity-100'}`}>Send Message</span>
-                </>)
-                }
+              <button
+                type='submit'
+                disabled={state.submitting}
+                className='btn btn-accent flex items-center justify-center gap-2'
+              >
+                {state.submitting ? (
+                  <span>Sending...</span>
+                ) : (
+                  <>
+                    <FaCheckCircle
+                      className={`absolute text-white text-lg transition-opacity duration-500 ease-in-out ${
+                        showIcon ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    />
+                    <span
+                      className={`transition-opacity duration-500 ease-in-out ${
+                        showIcon ? 'opacity-0' : 'opacity-100'
+                      }`}
+                    >
+                      Send Message
+                    </span>
+                  </>
+                )}
               </button>
             </form>
           </div>
-          <div className="hidden xl:flex relative w-[577px] h-[664px] rounded-lg overflow-hidden">
-            <Image src={'/assets/contact/img.png'} fill quality={100} alt="" className="object-cover"/>
+          <div className='hidden xl:flex relative w-[577px] h-[664px] rounded-lg overflow-hidden'>
+            <Image
+              src={'/assets/contact/img.png'}
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              quality={100}
+              alt=''
+              className='object-cover'
+            />
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
-export default Contact
+export default Contact;
