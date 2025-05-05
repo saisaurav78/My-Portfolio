@@ -30,11 +30,17 @@ const data = [
     img: '/assets/work/PostsNow.png',
     title: 'PostsNow - A Full Stack Blog site',
   },
+  {
+    href: 'https://sai-sowrav.itch.io/space-world',
+    category: 'Game Dev',
+    img: '/assets/work/SpaceWorld.png',
+    title: 'SpaceWorld - A 2D Game',
+  },
 ];
 
 const Work = () => {
   const [tabValue, setTabValue] = useState('all');
-  const [visibleItems, setVisibleItems] = useState(6);
+  const [visibleItems, setVisibleItems] = useState(4);
 
   // Unique categories memoized for performance
   const uniqueCategories = useMemo(
